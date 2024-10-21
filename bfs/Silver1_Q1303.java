@@ -58,8 +58,8 @@ public class Silver1_Q1303 {
             }
         }
 
-        for (int i = 1; i <= N; i++) {
-            for (int j = 1; j <= M; j++) {
+        for (int i = 1; i <= M; i++) {
+            for (int j = 1; j <= N; j++) {
 
                 if (!visits[i][j]) {
                     BFS(i, j);
