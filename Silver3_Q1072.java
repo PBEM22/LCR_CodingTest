@@ -29,18 +29,23 @@ public class Silver3_Q1072 {
         long X = Long.parseLong(st.nextToken());
         long Y = Long.parseLong(st.nextToken());
 
-        int count = 0;
-        boolean valid = true;
+        int Z = (int)(100 * Y / X);
 
-        if (X == Y) System.out.println(-1);
+        int count = 0;
+
+        if (Z >= 99) System.out.println(-1);
         else {
-            long temp = 100 * Y / X;
-            while (valid){
-                count++;
-                X++;
-                Y++;
-                if (!(temp == 100 * Y / X)){
-                    valid = false;
+            int left = 0;
+            int right = 1000000000;
+
+            while (left <= right){
+                int mid = (left + right) / 2;
+                int result = (int)((100 * (Y+mid)) / (X + mid));
+                if (result <= Z){
+                    left = mid + 1;
+                    count = mid + 1;
+                } else {
+                    right = mid - 1;
                 }
             }
 
