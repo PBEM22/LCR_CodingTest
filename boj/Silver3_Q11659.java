@@ -17,15 +17,14 @@ public class Silver3_Q11659 {
         st = new StringTokenizer(br.readLine());
 
         long[] S = new long[N+1];
-        int[] A = new int[N+1];
 
         for (int i = 1; i <= N; i++) {
-            A[i] = Integer.parseInt(st.nextToken());
+            int A = Integer.parseInt(st.nextToken());
 
             if (i == 1){
-                S[i] = A[i];
+                S[i] = A;
             } else {
-                S[i] = S[i -1] + A[i];
+                S[i] = S[i -1] + A;
             }
         }
 
@@ -35,13 +34,7 @@ public class Silver3_Q11659 {
             int first = Integer.parseInt(st.nextToken());
             int second = Integer.parseInt(st.nextToken());
 
-            if (first == 1){
-                sb.append(S[second]).append("\n");
-            } else if (first == second){
-                sb.append(A[first]).append("\n");
-            } else {
-                sb.append(S[second] - S[first - 1]).append("\n");
-            }
+            sb.append(S[second] - S[first - 1]).append("\n");
         }
         System.out.println(sb);
     }
