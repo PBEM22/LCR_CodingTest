@@ -33,6 +33,7 @@ public class Silver4_Q1940 {
             if (sum == M){
                 count++;
                 start++;
+                end--;
                 sum = arr[start] + arr[end];
 
             } else if (sum > M) {
