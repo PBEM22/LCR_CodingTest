@@ -1,6 +1,7 @@
 package boj;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Stack;
 
@@ -97,3 +98,56 @@ public class Gold4_Q9935 {
 
     }
 }
+
+// String을 toCharArray로 바꾸는 방법 (메모리 사용률 33퍼센트 정도 감소 및 시간 미약하게 개선)
+//public class Test {
+//
+//    public static void main(String[] args) throws IOException {
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//
+//        char[] arr = br.readLine().toCharArray();
+//
+//        String boom = br.readLine();
+//
+//        Stack<Character> stack = new Stack<>();
+//
+//        for (int i = 0; i < arr.length; i++) {
+//
+//            boolean flag = true;
+//
+//            stack.push(arr[i]);
+//
+//            if (stack.size() >= boom.length()){
+//
+//                for (int j = 0; j < boom.length(); j++){
+//
+//                    if (stack.get(stack.size() - boom.length() + j) != boom.charAt(j)){
+//                        flag = false;
+//                        break;
+//                    }
+//                }
+//
+//            }
+//
+//            if (flag && stack.size() >= boom.length()){
+//
+//                for (int j = 0; j < boom.length(); j++){
+//                    stack.pop();
+//                }
+//            }
+//
+//        }
+//
+//        if (stack.isEmpty()){
+//            System.out.println("FRULA");
+//        } else {
+//            StringBuilder sb = new StringBuilder();
+//
+//            for (char c : stack){
+//                sb.append(c);
+//            }
+//
+//            System.out.println(sb);
+//        }
+//    }
+//}
